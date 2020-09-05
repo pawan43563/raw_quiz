@@ -8,6 +8,8 @@ Clone repository
 
    git clone https://github.com/pawan43563/raw_quiz.git
    
+   cd rawquiz
+   
    
    pip install pipenv
    
