@@ -1,5 +1,7 @@
 # 1.Installations
 Clone repository
+
+
    https://github.com/pawan43563/raw_quiz.git
    pip install pipenv
    pipenv install django
@@ -11,20 +13,28 @@ Clone repository
   
 # 3.Creating a SuperUser
    python manage.py createsuperuser
+   
+   
    After this command you will be asked to give your name and password which will be used for uploading questions answers in csv,pdf,etc format.
 
 # 4.Running locally
    It will run on port 8000 by default.
+   
+   
    python manage.py runserver
 
 # 5.Uploading Questions and Answers:
    http://127.0.0.1:8000/admin
+   
+   
    This Url will take you to the admin login panel and the username and password will the one which you provided during creating superuser in step 3.
    After logging in you will see online_quiz class in which there will be two models i.e. Questions and Answers Clicking on any one of them you will be redirected to that
    respective model and there will a option to import datasets and dataset is being provided in CSV folders.
 
 # 6.Start the Quiz:
   http://127.0.0.1:8000
+  
+  
   This url will take you to the username page and you don't need to register just enter your name and start the quiz and your score along with your name will be displayed.
   
   
