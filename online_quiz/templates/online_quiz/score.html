@@ -18,27 +18,34 @@
 <body class="bg-light">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container">
-            <h1><a href="/" class="navbar-brand">
-            <strong>Quiz</strong></a></h1>
+            <h1 ><a href="/" class="navbar-brand white">
+            <strong  id="name_user"></strong></a></h1>
         </div>
 
     </nav>
-
-    
-
-
     <div class="jumbotron">
         <div class="container">
+ 
+            <!-- <p><strong>Name of the candidate:</strong></p> -->
+            <!-- <b><p id="name_user"><strong></strong></p></b> -->
             <div class="row">
               <div class="col-12 col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4">
                 <table class="table table-bordered">
                     <tr>
-                        <th>Name of the candidate:</th>
-                        <th id="name_user"></th>
-                    </tr>
-                    <tr>
                         <th>Total Marks obtained in the quiz:</th>
                         <th id="marks1"></th>
+                    </tr>
+                    <tr>
+                        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <div style="margin-top:16px;color:dimgrey;font-size:9px;font-family: Verdana, Arial, Helvetica, sans-serif;text-decoration:none;"></div>
+
+                    </tr>
+                    <tr>
+                        <div id="chartContainer1" style="height: 300px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <div style="margin-top:16px;color:dimgrey;font-size:9px;font-family: Verdana, Arial, Helvetica, sans-serif;text-decoration:none;"></div>
+
                     </tr>
                     <tr>
                         <th>Total Number of Correct Answers:</th>
@@ -148,6 +155,51 @@ function getCookie(name) {
         document.getElementById("time_q5").innerText=Math.floor(q5/60)+":"+q5%60;
         diffSec=q1+q2+q3+q4+q5
         document.getElementById("time_quiz").innerText=Math.floor(diffSec/60)+":"+diffSec%60;
+
+
+        var chart1 = new CanvasJS.Chart("chartContainer1", {
+	animationEnabled: true,
+	title: {
+		text: "Time Taken to complete Each Questions"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+			{y:q1 , label:"1st Question"},
+			{y:q2, label:"2nd Question" },
+            {y:q3, label:"3rd Question" },
+            {y:q4, label:"4th Question" },
+            {y:q5, label:"5th Question" },
+		]
+	}]
+});
+chart1.render();
+
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title: {
+		text: "Correct-Incorrect Answers"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+			{y:{{score}} , label:"Correct Answers"},
+			{y:5-{{score}}, label:"InCorrect Answers" },
+
+		]
+	}]
+});
+chart.render();
+
+
+
     </script>
 </body>
 </html>
