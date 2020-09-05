@@ -1,5 +1,5 @@
 # Preview
-   If you want to see how projects looks like and like to have a preview of it than i have provided Screenshots in the Screenshots Folder.
+   If you want to see how projects looks like and like to have a preview of it than i have provided some Screenshots in the Screenshots Folder.
 
 
 # 1.Installations
