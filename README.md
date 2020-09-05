@@ -3,15 +3,27 @@ Clone repository
 
 
    https://github.com/pawan43563/raw_quiz.git
+   
+   
    pip install pipenv
+   
+   
    pipenv install django
+   
+   
    pipenv shell 
    
 # 2.Migrations
+
+
   python manage.py makemigrations
+  
+  
   python manage.py migrate
   
 # 3.Creating a SuperUser
+
+
    python manage.py createsuperuser
    
    
