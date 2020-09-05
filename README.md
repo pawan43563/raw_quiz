@@ -1,3 +1,7 @@
+# Preview
+   If you want to see how projects looks like and like to have a preview of it than i have provided Screenshots in the Screenshots Folder.
+
+
 # 1.Installations
 Clone repository
 
@@ -53,5 +57,3 @@ Clone repository
   
   This url will take you to the username page and you don't need to register just enter your name and start the quiz and your score along with your name will be displayed.
   
-  
- ![alt text](https://github.com/pawan43563/raw_quiz/blob/master/Screenshot (28).jpg?raw=true)
