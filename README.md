@@ -13,6 +13,10 @@ Clone repository
    
    pipenv shell 
    
+   
+   pip install django-import-export
+   
+   
 # 2.Migrations
 
 
