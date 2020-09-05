@@ -20,9 +20,14 @@ def Welcome(request):
 
 def cache1(request):
     template_name = 'online_quiz/quiz.html'
-
-    l=[random.randrange(1,21,1) for i in range(5)]
-    temp=[]
+    l=[random.randrange(1,21,1)]
+    n=5
+    i=0
+    while i!=n:
+        temp=random.randrange(1,21,1) 
+        if temp not in l:
+            l.append(temp)
+        i+=1
     # start_time=datetime.now()
     
     q1=Question.objects.get(id=l[0])

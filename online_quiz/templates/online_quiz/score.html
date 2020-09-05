@@ -25,9 +25,7 @@
     </nav>
     <div class="jumbotron">
         <div class="container">
- 
-            <!-- <p><strong>Name of the candidate:</strong></p> -->
-            <!-- <b><p id="name_user"><strong></strong></p></b> -->
+
             <div class="row">
               <div class="col-12 col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4">
                 <table class="table table-bordered">
@@ -155,20 +153,21 @@ function getCookie(name) {
         document.getElementById("time_q5").innerText=Math.floor(q5/60)+":"+q5%60;
         diffSec=q1+q2+q3+q4+q5
         document.getElementById("time_quiz").innerText=Math.floor(diffSec/60)+":"+diffSec%60;
-
+        
 
         var chart1 = new CanvasJS.Chart("chartContainer1", {
 	animationEnabled: true,
 	title: {
-		text: "Time Taken to complete Each Questions"
+		text: "Time Taken to complete Each Questions in Seconds"
 	},
 	data: [{
 		type: "pie",
 		startAngle: 240,
-		yValueFormatString: "##0.00\"%\"",
+		yValueFormatString: "##0.00\"\"",
 		indexLabel: "{label} {y}",
 		dataPoints: [
-			{y:q1 , label:"1st Question"},
+            
+			{y:q1, label:"1st Question"},
 			{y:q2, label:"2nd Question" },
             {y:q3, label:"3rd Question" },
             {y:q4, label:"4th Question" },
@@ -187,7 +186,7 @@ chart1.render();
 	data: [{
 		type: "pie",
 		startAngle: 240,
-		yValueFormatString: "##0.00\"%\"",
+		yValueFormatString: "##0.00\"\"",
 		indexLabel: "{label} {y}",
 		dataPoints: [
 			{y:{{score}} , label:"Correct Answers"},
