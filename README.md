@@ -2,7 +2,7 @@
 Clone repository
 
 
-   https://github.com/pawan43563/raw_quiz.git
+   git clone https://github.com/pawan43563/raw_quiz.git
    
    
    pip install pipenv
