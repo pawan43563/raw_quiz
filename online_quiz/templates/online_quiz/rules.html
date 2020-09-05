@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Welcome </title>
+
+        <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik" rel="stylesheet">
+
+  
+    
+    
+
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <h1><a href="/" class="navbar-brand">
+            <strong>Quiz</strong></a></h1>
+        </div>
+
+    </nav>
+
+    <div class="jumbotron">
+        <div class="container">
+    
+              <h2 class="text-center " id="user_name">Welcome</h2>
+              <h3 class="text-center">Before you start the quiz, here are the rules</h3>
+                <div class="row shadow p-3 mb-5 bg-white rounded">
+                    <div class="col-md-12">
+                        <div class="card border-info mx-4 my-4">
+                            <div class="card-body ">
+                                <h4 class="card-title">Rules :</h4>
+                                <p class="card-text">
+                                    <ul style="list-style:decimal;">
+                                        <li>All questions are multiple choice question.</li>
+                                        <li><span class="text-danger">Only one choice is correct.</span></li>
+                                        <li>Every question carry equal marks i.e. <span class="text-danger">1 marks for each question.</span>
+                                        </li>
+                                        <li>There is no negative marking for an incorrect answer. </li>
+                                        <li>Questions are displayed randomly for every user.</li>
+                                        <li>The time limit for the quiz is 10 minutes</li>
+                                    </ul>
+                                </p>
+                                <a href="quiz" onclick="return my()" class="btn btn-dark">Start</a>
+                            </div>  
+                            <div class="card-footer">Rules last modified 04-September-2020</div>  
+                        </div> 
+                    </div>
+                     
+                </div>  
+        </div>
+    </div>
+
+
+    <footer class="bg-light text-muted py-0">
+        <div class="container py-4">
+            <ul class="list-inline mb-0 text-center">
+                <li class="list-inline-item">&copy; 2020 Raw Engineering.</li>
+            </ul>
+        </div>
+    </footer>
+    <script>
+        function my(){
+            setCookie('start_time',new Date().toString(),1)
+        }
+    </script>
+    <!-- jQuery first, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+</body>
+</html>

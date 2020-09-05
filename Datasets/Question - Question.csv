@@ -1,0 +1,21 @@
+id,content,option1,option2,option3,option4
+1,Which of the following has a relationship between / among themselves as a functional dependency?,Rows,Relations,Attributes,Tables
+2,Which of the following is used to define the schema of each database hosted in the DBMS?,Data Record,Data File,Database,None of the above
+3,Which one of the following statement is false?,√ logn = O (log log n),100n log n = O (nlogn/100),2n ≠ O (nk),If 0x = O (ny)
+4,What is the most suitable scheduling policy for a time - shared operating systems?,Shortest Job First,Elevator,First Come First Served,Round Robin
+5,How many HTML colors are supported by all the browsers?,100,140,80,90
+6,Which HTML tag is used to define a client - side script such as the Javascript?,<script>,<unscript>,Both A & B,None of the above
+7,Which of the following is the fastest ways to store and retrieve data?,Sorting,Hashing,Indexing,both A and C
+8,What should we call a binary tree whose every node has either zero or two children?,Complete Binary Tree,Binary Search Tree,Extended Binary Tree,None of Above
+9,"The operation of processing each element in the list is known as, _________.",Sorting,Merging,Inserting,Traversal
+10,HTTP Protocol is used in ________.,Application Layer,Data Link Layer,Transport Layer,Network Layer
+11,What is the size of the Ipv6 address?,64 bits,128 bits,32 bits,128 bytes
+12,Which state became the first in India to launch a free email address in Hindi for residents?,Uttar Pradesh,Madhya Pradesh,Rajasthan,Gujarat
+13,Where has the world's newest island been formed in 2014-2015?,Tonga,Japan,China,Samoa
+14,Who has won the Ballon d'Or award 5 times among the following soccer aces?,Lionel Messi,Luka Modric,Both a and b,Both b and c
+15,"NASSCOM has just appointed its first woman president, ________.",Anu Aga,Indra Nooyi,Debjani Ghosh,Chanda Kocchar
+16,When was the Guinness word record first published?,1954,1955,1956,1957
+17,For normal relational database design the form that is considered adequate is,3NF,5NF,2NF,4NF
+18,If the maximum number of keys in a node of a B+ tree is 5 then the minimum number of keys in any non-root node is,4,3,2,1
+19,Vicissitude,sorrows,misfortunes,changes,surprises
+20,Hirsute,Shaggy ,bald,erudite,glorious

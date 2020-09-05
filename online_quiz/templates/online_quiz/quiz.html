@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> </title>
+
+        <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/css/main.css">
+    
+        <script> 
+        //set minutes 
+        var mins = 10; 
+      
+        //calculate the seconds 
+        var secs = mins * 60; 
+  
+        //countdown function is evoked when page is loaded 
+        function countdown() { 
+            setTimeout('Decrement()', 60); 
+        } 
+  
+        //Decrement function decrement the value. 
+        function Decrement() { 
+            if (document.getElementById) { 
+                minutes = document.getElementById("minutes"); 
+                seconds = document.getElementById("seconds"); 
+  
+                //if less than a minute remaining 
+                //Display only seconds value. 
+                if (seconds < 59) { 
+                    seconds.value = secs; 
+                } 
+  
+                //Display both minutes and seconds 
+                //getminutes and getseconds is used to 
+                //get minutes and seconds 
+                else { 
+                    minutes.value = getminutes(); 
+                    seconds.value = getseconds(); 
+                } 
+                //when less than a minute remaining 
+                //colour of the minutes and seconds 
+                //changes to red 
+                if (mins < 1) { 
+                    minutes.style.color = "red"; 
+                    seconds.style.color = "red"; 
+                } 
+                //if seconds becomes zero, 
+                //then page alert time up 
+                if (mins < 0) { 
+                   
+                    minutes.value = 0; 
+                    seconds.value = 0; 
+                    v=5;
+                    my();
+                } 
+                //if seconds > 0 then seconds is decremented 
+                else { 
+                    secs--; 
+                    setTimeout('Decrement()', 1000); 
+                } 
+            } 
+        } 
+  
+        function getminutes() { 
+            //minutes is seconds divided by 60, rounded down 
+            mins = Math.floor(secs / 60); 
+            return mins; 
+        } 
+  
+        function getseconds() { 
+            //take minutes remaining (as seconds) away  
+            //from total seconds remaining 
+            return secs - Math.round(mins * 60); 
+        } 
+ 
+        function test1(){
+          let x=new Date().toString()
+
+          setCookie("start_time",x,1);
+          countdown();
+        }
+    </script>
+
+</head>
+
+
+<body class="bg-light" onload="test1()">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <h1><a href="/" class="navbar-brand">
+            <strong>Time Left ::
+              <input id="minutes" type="text" style="width: 40px; 
+                   border: none; font-size: 26px;  
+                  font-weight: bold; color: black;"><font size="10"> : 
+                              </font> 
+              <input id="seconds" type="text" style="width: 40px; 
+                              border: none; font-size: 26px; 
+                              font-weight: bold; color: black;">
+            </strong></a></h1>
+        </div>
+
+    </nav>
+
+
+<div class="container">
+
+
+<form class="form" action="cache3" method="post" id="form-{{q1.id}}" name="myform" >
+{% csrf_token %}
+
+
+  <div class="jumbotron my-4" id='1' style="display: block">
+
+    <h3 class="text-info"></h3>
+
+        
+        <p>
+          <!--Question Id-->
+            <input name="qno1" value={{q1.id}} style="width:30px;">
+          {{q1.content}}
+          
+        </p>     
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="choice_pk1" id="choice-1" value={{q1.option1}} default=-1>
+            <label class="form-check-label" >
+              {{q1.option1}}
+            </label>
+          </div>
+
+        
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="choice_pk1" id="choice-2" value={{q1.option2}} default=-1> 
+            <label class="form-check-label" >
+              {{q1.option2}}
+            </label>
+          </div>
+
+        
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="choice_pk1" id="choice-3" value={{q1.option3}} default=-1>
+            <label class="form-check-label" >
+              {{q1.option3}}
+            </label>
+          </div>
+
+        
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="choice_pk1" id="choice-4" value={{q1.option4}} default=-1>
+            <label class="form-check-label" >
+              {{q1.option4}}
+            </label>
+          </div>
+
+     
+   </div>
+
+
+
+  <div class="jumbotron my-4" id='2' style="display: none">
+
+    <h3 class="text-info"></h3>
+
+        
+        <p>
+            <input name="qno2" value={{q2.id}} type="text">
+          {{q2.content}}
+          
+        </p>     
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="choice_pk2" id="choice-1" value={{q2.option1}} default=-1>
+            <label class="form-check-label" >
+              {{q2.option1}}
+            </label>
+          </div>
+
+        
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="choice_pk2" id="choice-2" value={{q2.option2}} default=-1>
+            <label class="form-check-label" >
+              {{q2.option2}}
+            </label>
+          </div>
+
+        
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="choice_pk2" id="choice-3" value={{q2.option3}} default=-1>
+            <label class="form-check-label" >
+              {{q2.option3}}
+            </label>
+          </div>
+
+        
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="choice_pk2" id="choice-4" value={{q2.option4}} default=-1>
+            <label class="form-check-label" >
+              {{q2.option4}}
+            </label>
+          </div>
+
+      
+ 
+   </div>
+
+
+
+     <div class="jumbotron my-4" id='3' style="display: none">
+
+    <h3 class="text-info"></h3>
+
+        
+        <p>
+            <input name="qno3" value={{q3.id}} type="text">
+         {{q3.content}}
+          
+        </p>     
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="choice_pk3" id="choice-1" value={{q3.option1}} default=-1>
+            <label class="form-check-label" >
+              {{q3.option1}}
+            </label>
+          </div>
+
+        
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="choice_pk3" id="choice-2" value={{q3.option2}} default=-1>
+            <label class="form-check-label" >
+              {{q3.option2}}
+            </label>
+          </div>
+
+        
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="choice_pk3" id="choice-3" value={{q3.option3}} default=-1>
+            <label class="form-check-label" >
+              {{q3.option3}}
+            </label>
+          </div>
+
+        
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="choice_pk3" id="choice-4" value={{q3.option4}} default=-1 >
+            <label class="form-check-label" >
+              {{q3.option4}}
+            </label>
+          </div>
+
+      
+ 
+   </div>
+
+
+
+
+     <div class="jumbotron my-4" id='4' style="display: none">
+
+    <h3 class="text-info"></h3>
+
+        
+        <p>
+            <input name="qno4" value={{q4.id}} type="text">
+            {{q4.content}}
+          
+        </p>     
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="choice_pk4" id="choice-1" value={{q4.option1}} default=-1> 
+            <label class="form-check-label" >
+              {{q4.option1}}
+            </label>
+          </div>
+
+        
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="choice_pk4" id="choice-2" value={{q4.option2}} default=-1>
+            <label class="form-check-label" >
+              {{q4.option2}}
+            </label>
+          </div>
+
+        
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="choice_pk4" id="choice-3" value={{q4.option3}} default=-1>
+            <label class="form-check-label" >
+              {{q4.option3}}
+            </label>
+          </div>
+
+        
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="choice_pk4" id="choice-4" value={{q4.option4}} default=-1 >
+            <label class="form-check-label" >
+              {{q4.option4}}
+            </label>
+          </div>
+
+      
+ 
+   </div>
+
+
+     <div class="jumbotron my-4" id='5' style="display: none">
+
+    <h3 class="text-info"></h3>
+
+        
+        <p>
+            <input name="qno5" value={{q5.id}} type="text">
+            {{q5.content}}
+          
+        </p>     
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="choice_pk5" id="choice-1" value={{q5.option1}} default=-1>
+            <label class="form-check-label" >
+              {{q5.option1}}
+            </label>
+          </div>
+
+        
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="choice_pk5" id="choice-2" value={{q5.option2}} default=-1>
+            <label class="form-check-label" >
+              {{q5.option2}}
+            </label>
+          </div>
+
+        
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="choice_pk5" id="choice-3" value={{q5.option3}} default=-1 >
+            <label class="form-check-label" >
+              {{q5.option3}}
+            </label>
+          </div>
+
+        
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="choice_pk5" id="choice-4" value={{q5.option4}} default=-1 >
+            <label class="form-check-label" >
+              {{q5.option4}}
+            </label>
+          </div>
+
+      
+ 
+   </div>
+
+<input class="btn btn-dark" id='submit' type='submit' disabled>
+</form>
+<Button style="margin-top: 20px;" class="btn btn-dark" onclick='my()'>Next</Button>
+
+
+</div>
+    <footer class="bg-light text-muted py-0">
+        <div class="container py-4">
+            <ul class="list-inline mb-0 text-center">
+                <li class="list-inline-item">&copy; 2020 Raw Engineering.</li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+
+function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+    
+	var v=1;
+
+
+	function my()
+	{
+
+    if(v == 5)
+    {
+      let a=JSON.parse(getCookie('tracker'))
+        f=v
+        a[f]=new Date()-new Date (Date.parse(getCookie('start_time')))
+        // console.log(a[f])
+        var diffSec = parseInt(Math.abs(a[f]) / (1000) % 60);  
+        a[f]=diffSec
+        // console.log(f,a[f])
+        setCookie('tracker',JSON.stringify(a),1)
+        if (v==5){
+          setCookie('end_time',new Date(),1)
+        }
+      document.getElementById('submit').disabled=false;
+      document.getElementById('submit').click();
+    }
+	 else
+   {
+    let a=JSON.parse(getCookie('tracker'))
+        f=v
+        a[f]=new Date()-new Date (Date.parse(getCookie('start_time')))
+        var diffSec = parseInt(Math.abs(a[f]) / (1000) % 60);  
+        a[f]=diffSec
+        // console.log(f,a[f])
+        setCookie('tracker',JSON.stringify(a),1)
+        if (v==5){
+          setCookie('end_time',new Date(),1)
+        }
+		document.getElementById(v).style.display='none';
+		v=v+1;
+		document.getElementById(v).style.display='block';
+   }
+		
+	}
+
+
+
+
+
+    </script>
+
+
+    <!-- jQuery first, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.5/js/smooth-scroll.min.js" integrity="sha256-MMt0/21G3z0Zg4ET1kI3HC9npItDowkitRDVr0FhCxA=" crossorigin="anonymous"></script>
+
+    <!-- <script src="/static/js/main.js"></script>
+     -->
+</body>
+</html>

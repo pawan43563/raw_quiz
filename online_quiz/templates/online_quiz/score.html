@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Start Quiz</title>
+
+        <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik" rel="stylesheet">
+
+
+    
+    
+
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <h1><a href="/" class="navbar-brand">
+            <strong>Quiz</strong></a></h1>
+        </div>
+
+    </nav>
+
+    
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+              <div class="col-12 col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Name of the candidate:</th>
+                        <th id="name_user"></th>
+                    </tr>
+                    <tr>
+                        <th>Total Marks obtained in the quiz:</th>
+                        <th id="marks1"></th>
+                    </tr>
+                    <tr>
+                        <th>Total Number of Correct Answers:</th>
+                        <th>{{score}}</th>
+                    </tr>
+                    <tr>
+                        <th>Total Number of InCorrect Answers:</th>
+                        <th id="incorrect"></th>
+                    </tr>
+                    <tr>
+                        <th>Time Taken for Question1:</th>
+                        <th id="time_q1"></th>
+                    </tr>
+                    <tr>
+                        <th>Time Taken for Question2:</th>
+                        <th id="time_q2"></th>
+                    </tr>
+                    <tr>
+                        <th>Time Taken for Question3:</th>
+                        <th id="time_q3"></th>
+                    </tr>
+                    <tr>
+                        <th>Time Taken for Question4:</th>
+                        <th id="time_q4"></th>
+                    </tr>
+                    <tr>
+                        <th>Time Taken for Question5:</th>
+                        <th id="time_q5"></th>
+                    </tr>
+                    <tr>
+                        <th>Total Time Taken to complete the Quiz:</th>
+                        <th id="time_quiz"></th>
+                    </tr>
+                </table>
+                  
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+    <footer class="bg-light text-muted py-0">
+        <div class="container py-4">
+            <ul class="list-inline mb-0 text-center">
+                <li class="list-inline-item">&copy; 2020 Raw Engineering</li>
+            </ul>
+        </div>
+    </footer>
+    <!-- jQuery first, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.5/js/smooth-scroll.min.js" integrity="sha256-MMt0/21G3z0Zg4ET1kI3HC9npItDowkitRDVr0FhCxA=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script>
+
+function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+        document.getElementById("name_user").innerText=getCookie('username');
+        score2=5-({{score}})
+        document.getElementById("incorrect").innerText=score2;
+        score1=({{score}}/5).toFixed(2);
+        let marks=score1*100;
+        document.getElementById("marks1").innerText=marks;
+        let a=getCookie('tracker');
+        a=JSON.parse(a);
+        text=[]
+        var x;
+            for (x in a) {
+            if(!isNaN(a[x])){
+                text.push(a[x]);
+            }
+            
+            }
+        q1=text[0];
+        q2=Math.abs(text[1]-text[0]);
+        q3=Math.abs(text[2]-text[1]);
+        q4=Math.abs(text[3]-text[2]);
+        q5=Math.abs(text[4]-text[3]);
+        q1=parseInt(q1)
+        q2=parseInt(q2)
+        q3=parseInt(q3)
+        q4=parseInt(q4)
+        q5=parseInt(q5)
+        document.getElementById("time_q1").innerText=Math.floor(q1/60)+":"+q1%60;
+        document.getElementById("time_q2").innerText=Math.floor(q2/60)+":"+q2%60;
+        document.getElementById("time_q3").innerText=Math.floor(q3/60)+":"+q3%60;
+        document.getElementById("time_q4").innerText=Math.floor(q4/60)+":"+q4%60;
+        document.getElementById("time_q5").innerText=Math.floor(q5/60)+":"+q5%60;
+        diffSec=q1+q2+q3+q4+q5
+        document.getElementById("time_quiz").innerText=Math.floor(diffSec/60)+":"+diffSec%60;
+    </script>
+</body>
+</html>
