@@ -1,3 +1,6 @@
+# Test Portal
+   The chief aim of test portal, web application, is to effectively estimate the candidate completely via a totally automated system that offers swifter outcomes besides preserving time.
+   
 # Preview
    If you want to see how projects looks like and like to have a preview of it than i have provided some Screenshots in the Screenshots Folder.
 
